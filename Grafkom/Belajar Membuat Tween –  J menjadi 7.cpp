@@ -1,6 +1,6 @@
-// tugas perpotongan garis grafkom
+// Tugas 3 tweening fuiyohh
 // written by jonathan gea || 672019111
-// 07-june-2021
+// 09-june-2021
 #include <windows.h>
 #ifdef __APPLE__
 #include <GLUT/glut.h>
