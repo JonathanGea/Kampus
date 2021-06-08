@@ -1,3 +1,6 @@
+// tugas perpotongan garis grafkom
+// written by jonathan gea || 672019111
+// 07-june-2021
 #include <windows.h>
 #ifdef __APPLE__
 #include <GLUT/glut.h>
@@ -12,7 +15,7 @@
 #define WH (WW/RATIO)
 #define HALFX ((int)(WW/2))
 #define HALFY ((int)(WH/2))
-#define deltat .001
+#define deltat .0009
 int WindowWidth;
 int WindowHeight;
 
@@ -30,7 +33,7 @@ main(int argc, char **argv)
     WindowHeight = (int)(WindowWidth/RATIO);
     glutInitWindowSize(WindowWidth,WindowHeight);
     glutInitWindowPosition((int)(glutGet((GLenum)GLUT_SCREEN_WIDTH)*.1),(glutGet((GLenum)GLUT_SCREEN_HEIGHT)/2)-(WindowHeight/2));
-    glutCreateWindow("Belajar Membuat Tween – Huruf E menjadi M");
+    glutCreateWindow(" Jonathan Gea - 672019111");
     glutDisplayFunc(Display);
     glutReshapeFunc(Reshape);
     InitGL();
@@ -40,9 +43,8 @@ main(int argc, char **argv)
 void Display()
 {
     glLineWidth(4.0);
-    float StartShape[12][2] = {{-15,25},{-15,-15},{10,-15},{10,-5},{-5,-5},{-5,0},{8,0},{8,10},{-5,10},{-5,15},{10,15},{10,25}};
-    float EndShape[12][2] = {{-15,-15},{-5,-15},{-5,10},{0,0},{5,10},{5,-15},{15,-15},{15,25},{5,25},{0,15},{-5,25},{-15,25}};
-
+    float StartShape[14][2] = {{-9,15},{10,15},{10,5},{10,-9},{7,-15},{2,-18},{-5,-18},{-13,-14},{-12,-9},{-4,-11},{-2,-11},{2,-9},{2,10},{-9,10}};
+    float EndShape[14][2] = {{-11,15},{11,15},{7,2},{10,2},{10,-3},{5,-3},{0,-18},{-7,-18},{-2,-3},{-5,-3},{-5,2},{0,2},{3,10},{-11,10}};
     float IntermediateShape[12][2];
     float VertexColors[12][3]= {{1,0,0},{1,1,0},{1,0,1},{0,1,0},{0,1,1},{0,0,1},{1,0.5,0},{1,0,0.5},{0.5,1,0},{0.5,0,1}, {1,0,0.5},{0,1,0.5}};
     static float Tween=0.0-deltat;
@@ -50,7 +52,7 @@ void Display()
     {
         Tween+= deltat;
     }
-    for (int Vtx=0; Vtx<13; Vtx++)
+    for (int Vtx=0; Vtx<14; Vtx++)
     {
         IntermediateShape[Vtx][0]=(1.0-Tween)*StartShape[Vtx][0]+Tween*EndShape[Vtx][0];
         IntermediateShape[Vtx][1]=(1.0-Tween)*StartShape[Vtx][1]+Tween*EndShape[Vtx][1];
