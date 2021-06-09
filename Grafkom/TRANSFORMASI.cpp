@@ -13,7 +13,9 @@ void myDisplay(void)
     glRectf(300.0,200.0,400.0,300.0);
     glColor3f(1.0,0.0,0.0);
     glPushMatrix();
+    glTranslated(150,150,0);
     glRotated (30.0f,0.0f,0.0f,1.0f);
+    glScaled(0.5f,0.5f,1.0f);
     glRectf(300.0,200.0,400.0,300.0);
     glPopMatrix();
     glFlush();
