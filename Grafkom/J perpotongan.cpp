@@ -1,6 +1,6 @@
 // tugas perpotongan garis grafkom
 // written by jonathan gea || 672019111
-// 07-june-2021
+// 30-june-2021
 
 #include <windows.h>
 #ifdef __APPLE__
